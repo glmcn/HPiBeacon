@@ -1,0 +1,14 @@
+GN_DEFINE_PROTOCOL(CSibeaconWelcomProtocol, //   迎宾系统检测确认面试者协议
+                                                                          // 参数列表：
+        GN_DEFINE_PROTOCOL_PARAM_TYPE_LIST_GROUP(
+        GNParamType::UINT32 ,   // 用户id
+         GNParamType::STRING,//电话号码
+           GNParamType::STRING//姓名
+        ))
+
+GN_DEFINE_PROTOCOL(SCibeaconWelcomProtocolBack, //    迎宾系统检测确认面试者返回协议
+                                                                          // 参数列表：
+        GN_DEFINE_PROTOCOL_PARAM_TYPE_LIST_GROUP(
+        GNParamType::UINT32 ,   // 用户id
+         GNParamType::UINT32//验证情况反馈
+        ))

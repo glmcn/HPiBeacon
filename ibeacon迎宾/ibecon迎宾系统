@@ -1,0 +1,14 @@
+题目来源和维护系统
+1 增加试题和答案，试题和答案号一一对应；试题和答案的修改和查看。
+
+自动生成试卷系统
+2 客户端发来开始考试的请求，请求协议号CSStartTestingProtocol(id int,testType STRING,difficultyDegree UINT32)//如果是面试者有默认id为身份证号，考核者和学生id待定；
+testType暂定c++/java/Andriod/ios;difficultyDegree从0开始。
+3 根据协议（testType,difficultyDegree)自动生成一套试题，并把试题和答案还给客户端
+SCStartTestingProtocolBack(id int,testContent STRING,questionAnswers STRING)
+
+自动批改试卷系统
+4 笔试者提交答案，协议号CSSubmitAnsersProtoclol(id int,answers STING)
+5 接收到答案提交后，反馈客户端提交成功的信息CSSubmitAnsersProtoclolBack（id UINT32,submitSuccess UINT32）
+6 从数据库取出标准答案，与提交答案（questionAnswers）进行逐个判断，并把答案和对错情况存在数据库中testAnswerSheet,testScoreSheet
+
